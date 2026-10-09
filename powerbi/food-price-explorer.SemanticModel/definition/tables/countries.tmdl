@@ -1,0 +1,25 @@
+table countries
+	lineageTag: d2dd6bec-80d2-4dbd-b71d-209b3864ed27
+
+	column country
+		dataType: string
+		lineageTag: a0f420d8-7143-47d0-9435-5a9b875976b5
+		summarizeBy: none
+		sourceColumn: country
+
+	column currency
+		dataType: string
+		lineageTag: 5df0df36-47f9-46e0-bb83-78ee999f865b
+		summarizeBy: none
+		sourceColumn: currency
+
+	partition countries = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(DataFolder & "countries.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Promoted, {{"country", type text}, {"currency", type text}}, "en-US")
+				in
+					Typed
+

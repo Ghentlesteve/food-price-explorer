@@ -1,0 +1,116 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "prices.latest_month_label": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "prices",
+			          "ConceptualProperty": "Latest Month Label"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Latest month": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "prices.change_since_2020_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "prices",
+			          "ConceptualProperty": "Change Since 2020 %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Price change since Jan 2020, local currency": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "prices.change_since_2020_usd_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "prices",
+			          "ConceptualProperty": "Change Since 2020 USD %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Price change since Jan 2020, in USD": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fx_monthly.fx_change_since_2020_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fx_monthly",
+			          "ConceptualProperty": "FX Change Since 2020 %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Local currency per USD, change since Jan 2020": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "countries.country": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "countries",
+			          "ConceptualProperty": "country"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Country": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

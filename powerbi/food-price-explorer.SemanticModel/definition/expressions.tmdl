@@ -1,0 +1,5 @@
+expression DataFolder = "C:\Users\Kwenev Steve\Documents\Web\Advanced Dashboards\food-price-explorer\data\clean\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: cba6cb0c-9e9e-41a8-b70a-909fac901423
+
+	annotation PBI_ResultType = Text
+

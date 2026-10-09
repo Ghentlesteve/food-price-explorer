@@ -1,0 +1,255 @@
+table prices
+	lineageTag: a0b3c1b8-db48-4e46-892e-9a161ec9ea06
+
+	measure 'Median Price' = CALCULATE ( MEDIAN ( prices[price_per_unit_local] ), prices[exclude] = FALSE (), prices[is_main_unit] = TRUE (), prices[pricetype] = "Retail" )
+		formatString: #,0
+		lineageTag: 2cda9afd-a43f-45d6-a167-b6bbe778363c
+
+	measure 'Median Price USD' = CALCULATE ( MEDIAN ( prices[price_per_unit_usd] ), prices[exclude] = FALSE (), prices[is_main_unit] = TRUE (), prices[pricetype] = "Retail" )
+		formatString: $#,0.00
+		lineageTag: 8b7ab3f0-3c4e-496f-9bd5-87884a64a665
+
+	measure 'Latest Month' = CALCULATE ( MAX ( prices[month] ), ALLSELECTED ( dates ), prices[exclude] = FALSE () )
+		formatString: mmm yyyy
+		lineageTag: 388215fc-00a7-4dc0-9b67-48187ee347b5
+
+	measure 'Price Latest' = VAR lm = [Latest Month] RETURN CALCULATE ( [Median Price], REMOVEFILTERS ( dates ), dates[month] = lm )
+		formatString: #,0
+		lineageTag: 1ec05b6a-d6dc-4eb8-a076-f6e53da225d1
+
+	measure 'Price 12M Ago' = VAR lm = [Latest Month] RETURN CALCULATE ( [Median Price], REMOVEFILTERS ( dates ), dates[month] = EDATE ( lm, -12 ) )
+		formatString: #,0
+		lineageTag: 8ee62929-43f3-41ce-9a9c-3a7fc040584e
+
+	measure 'Change 12M %' = VAR a = [Price 12M Ago] RETURN DIVIDE ( [Price Latest] - a, a )
+		formatString: +0%;-0%;0%
+		lineageTag: c688995c-16cb-4c39-916b-870ba1b36df5
+
+	measure 'Price Jan 2020' = CALCULATE ( [Median Price], REMOVEFILTERS ( dates ), dates[month] = DATE ( 2020, 1, 1 ) )
+		formatString: #,0
+		lineageTag: 1cb0b7f8-c5f7-4e4d-9438-a45c6ab91e3f
+
+	measure 'Change Since 2020 %' = DIVIDE ( [Price Latest] - [Price Jan 2020], [Price Jan 2020] )
+		formatString: +0%;-0%;0%
+		lineageTag: 6c3c1ed7-ec1b-48b4-bde3-10b86329f739
+
+	measure 'Markets Reporting' = CALCULATE ( DISTINCTCOUNT ( prices[market_id] ), prices[pricetype] = "Retail", prices[exclude] = FALSE () )
+		formatString: #,0
+		lineageTag: df5b3599-f3a0-4948-a774-632a4944b21c
+
+	measure Records = COUNTROWS ( prices )
+		formatString: #,0
+		lineageTag: e66367b5-e282-4594-bee1-d888e152df0f
+
+	measure 'Market Max Price' = MAXX ( VALUES ( markets[market_id] ), [Median Price] )
+		formatString: #,0
+		lineageTag: 91eb01a4-f3d6-4431-8b66-99f668914e2d
+
+	measure 'Market Min Price' = MINX ( VALUES ( markets[market_id] ), [Median Price] )
+		formatString: #,0
+		lineageTag: 91439668-30e1-4005-9a07-bfd544755d1b
+
+	measure 'Market Spread %' = DIVIDE ( [Market Max Price] - [Market Min Price], [Market Min Price] )
+		formatString: 0%
+		lineageTag: a763bb22-a2a1-4e1f-b8be-9de107ab2383
+
+	measure 'Price Index (Jan 2020 = 100)' = DIVIDE ( [Median Price], [Price Jan 2020] ) * 100
+		formatString: #,0
+		lineageTag: 57cd7f2f-7216-4c91-a060-0469ae66cab5
+
+	measure 'Price Index USD (Jan 2020 = 100)' = DIVIDE ( [Median Price USD], CALCULATE ( [Median Price USD], REMOVEFILTERS ( dates ), dates[month] = DATE ( 2020, 1, 1 ) ) ) * 100
+		formatString: #,0
+		lineageTag: c4a8043c-572d-4c03-807d-bbd7ee872fcf
+
+	measure 'Latest Month Label' = FORMAT ( [Latest Month], "mmm yyyy" )
+		lineageTag: 2d25e9c4-3573-4fcd-a525-e1bb54cc90cf
+
+	measure 'Unit Label' = CALCULATE ( MAX ( prices[std_unit] ), prices[is_main_unit] = TRUE () )
+		lineageTag: be234742-fca3-484a-b7ff-dceb78a45b96
+
+	measure 'Trend Title' = SELECTEDVALUE ( prices[commodity_group], "Selected food" ) & ": median retail price, ₦ per " & [Unit Label]
+		lineageTag: 547e74bd-fc2b-4f5f-bebf-cb3ecbd9ca7f
+
+	measure 'KPI Latest Title' = "Latest price, ₦ per " & [Unit Label] & " (" & [Latest Month Label] & ")"
+		lineageTag: 7d6ea6b6-3354-4079-bfe9-3e7f2e6bac10
+
+	measure 'Markets Latest' = VAR lm = [Latest Month] RETURN CALCULATE ( [Markets Reporting], REMOVEFILTERS ( dates ), dates[month] = lm )
+		formatString: #,0
+		lineageTag: 2d20bdb9-a61a-4701-af00-22094eb3ea4f
+
+	measure 'Market Price Latest' = VAR lm = CALCULATE ( [Latest Month], ALLSELECTED ( markets ) ) RETURN CALCULATE ( [Median Price], REMOVEFILTERS ( dates ), dates[month] = lm )
+		formatString: #,0
+		lineageTag: 220ef7eb-5f18-4849-8df8-7499c19ffbd5
+
+	measure 'Market Max Latest' = MAXX ( VALUES ( markets[market_id] ), [Market Price Latest] )
+		formatString: #,0
+		lineageTag: 6a2a355f-81ca-436d-93bf-df93a6417d8b
+
+	measure 'Market Min Latest' = MINX ( VALUES ( markets[market_id] ), [Market Price Latest] )
+		formatString: #,0
+		lineageTag: a65b4ce7-9ce5-4327-a36e-3b86713a8635
+
+	measure 'Market Spread Latest %' = DIVIDE ( [Market Max Latest] - [Market Min Latest], [Market Min Latest] )
+		formatString: 0%
+		lineageTag: a4a07181-804f-4d03-9837-8dbae1fa5ac2
+
+	measure 'Map Title' = SELECTEDVALUE ( prices[commodity_group], "Selected food" ) & " by market, ₦ per " & [Unit Label] & " (" & FORMAT ( CALCULATE ( [Latest Month], ALLSELECTED ( markets ) ), "mmm yyyy" ) & ")"
+		lineageTag: e854da82-cd5a-4c24-99e6-7be9a0c6be3a
+
+	measure 'Change Since 2020 USD %' = VAR lm = [Latest Month] VAR a = CALCULATE ( [Median Price USD], REMOVEFILTERS ( dates ), dates[month] = lm ) VAR b = CALCULATE ( [Median Price USD], REMOVEFILTERS ( dates ), dates[month] = DATE ( 2020, 1, 1 ) ) RETURN DIVIDE ( a - b, b )
+		formatString: +0%;-0%;0%
+		lineageTag: 34b9e36b-291e-4e54-a2f0-8ee588fc7368
+
+	measure 'Tooltip Title' = SELECTEDVALUE ( markets[market], "Market" ) & ", " & SELECTEDVALUE ( markets[state] ) & ": ₦ per " & [Unit Label] & ", " & FORMAT ( CALCULATE ( [Latest Month], ALLSELECTED ( markets ) ), "mmm yyyy" )
+
+	column month
+		dataType: dateTime
+		formatString: mmm yyyy
+		lineageTag: bffb6f1d-4786-4d35-9a4e-3a719937c035
+		summarizeBy: none
+		sourceColumn: month
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column country
+		dataType: string
+		lineageTag: 4f9d944b-e2b8-4dd3-aeb3-224eaea9f88b
+		summarizeBy: none
+		sourceColumn: country
+
+	column zone
+		dataType: string
+		lineageTag: 347d7dab-9156-4f62-88fb-db93013e1d7d
+		summarizeBy: none
+		sourceColumn: zone
+
+	column state
+		dataType: string
+		lineageTag: 299c1a15-a268-44d8-987b-e00f4f6fab23
+		summarizeBy: none
+		sourceColumn: state
+
+	column lga
+		dataType: string
+		lineageTag: 1231d30d-e561-49e8-86b7-9ebd0ccbe81d
+		summarizeBy: none
+		sourceColumn: lga
+
+	column market
+		dataType: string
+		lineageTag: f9d6a78b-f9cb-42ae-9154-e78d38d9145f
+		summarizeBy: none
+		sourceColumn: market
+
+	column market_id
+		dataType: int64
+		lineageTag: 7de238d8-1dce-4f1c-aeb4-173fb83b6223
+		summarizeBy: none
+		sourceColumn: market_id
+
+	column category
+		dataType: string
+		lineageTag: 732c080e-46d2-4bac-a945-2106e5bb3916
+		summarizeBy: none
+		sourceColumn: category
+
+	column commodity
+		dataType: string
+		lineageTag: 12b5ae72-ae22-491c-96f6-ec0f7fd17219
+		summarizeBy: none
+		sourceColumn: commodity
+
+	column commodity_group
+		dataType: string
+		lineageTag: 272999cf-9d7f-446c-a3aa-cfbec03280f2
+		summarizeBy: none
+		sourceColumn: commodity_group
+
+	column pricetype
+		dataType: string
+		lineageTag: 4dc834c4-a694-4478-a059-825931c0bec0
+		summarizeBy: none
+		sourceColumn: pricetype
+
+	column unit
+		dataType: string
+		lineageTag: 762f2195-ef94-4c5e-9a21-7b24a985db98
+		summarizeBy: none
+		sourceColumn: unit
+
+	column unit_qty
+		dataType: double
+		lineageTag: e789da5e-0023-4e89-8522-d2fdda7bd1ac
+		summarizeBy: sum
+		sourceColumn: unit_qty
+
+	column std_unit
+		dataType: string
+		lineageTag: 10657dc2-c0c5-4e43-8a01-e2ef16fb15e4
+		summarizeBy: none
+		sourceColumn: std_unit
+
+	column currency
+		dataType: string
+		lineageTag: a361b1bf-2e41-45ae-8374-2440a2b3681b
+		summarizeBy: none
+		sourceColumn: currency
+
+	column price_local
+		dataType: double
+		lineageTag: e44ccd84-a03f-4431-b100-74ec714e9f7e
+		summarizeBy: sum
+		sourceColumn: price_local
+
+	column price_usd
+		dataType: double
+		lineageTag: a79d145f-9011-437c-8b91-d1c4cd3929a0
+		summarizeBy: sum
+		sourceColumn: price_usd
+
+	column price_per_unit_local
+		dataType: double
+		lineageTag: fb75f9df-8ae4-4e57-94ad-f3682b9bb978
+		summarizeBy: sum
+		sourceColumn: price_per_unit_local
+
+	column price_per_unit_usd
+		dataType: double
+		lineageTag: 22f09212-e063-4d43-b07d-4fdf1d7e21bc
+		summarizeBy: sum
+		sourceColumn: price_per_unit_usd
+
+	column is_main_unit
+		dataType: boolean
+		lineageTag: e6d8e738-88c8-4de2-9887-1130062cfbbe
+		summarizeBy: none
+		sourceColumn: is_main_unit
+
+	column is_aggregate
+		dataType: boolean
+		lineageTag: 2c6bff28-f9f7-40cc-85f1-5b1a2b6447c3
+		summarizeBy: none
+		sourceColumn: is_aggregate
+
+	column exclude
+		dataType: boolean
+		lineageTag: b7f271a8-d65b-4f57-949c-d6c29e462e8b
+		summarizeBy: none
+		sourceColumn: exclude
+
+	column exclude_reason
+		dataType: string
+		lineageTag: 3f1d2c4e-8a6b-4f0e-9c1d-5e7a2b9c4d10
+		summarizeBy: none
+		sourceColumn: exclude_reason
+
+	partition prices = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(DataFolder & "prices.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Promoted, {{"month", type date}, {"country", type text}, {"zone", type text}, {"state", type text}, {"lga", type text}, {"market", type text}, {"market_id", Int64.Type}, {"category", type text}, {"commodity", type text}, {"commodity_group", type text}, {"pricetype", type text}, {"unit", type text}, {"unit_qty", type number}, {"std_unit", type text}, {"currency", type text}, {"price_local", type number}, {"price_usd", type number}, {"price_per_unit_local", type number}, {"price_per_unit_usd", type number}, {"is_main_unit", type logical}, {"is_aggregate", type logical}, {"exclude", type logical}, {"exclude_reason", type text}}, "en-US")
+				in
+					Typed
+

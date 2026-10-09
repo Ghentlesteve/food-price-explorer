@@ -1,0 +1,11 @@
+EVALUATE
+SUMMARIZECOLUMNS (
+    countries[country],
+    "Rows", [Records],
+    "Markets", [Markets Reporting],
+    "Latest", [Latest Month Label],
+    "FX Jul 2024", CALCULATE ( [Exchange Rate (per USD)], dates[month] = DATE ( 2024, 7, 1 ) ),
+    "Millet latest", CALCULATE ( [Price Latest], commodities[commodity_group] = "Millet" ),
+    "Millet 12M", CALCULATE ( [Change 12M %], commodities[commodity_group] = "Millet" ),
+    "Millet since 2020", CALCULATE ( [Change Since 2020 %], commodities[commodity_group] = "Millet" )
+)

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "food-price-explorer"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "fa49d78c-4db2-45a2-b8e8-d9a3ba31543c"
+  }
+}

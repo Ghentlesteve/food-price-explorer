@@ -1,0 +1,100 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 49.999999999999986,
+            "y": -50
+          },
+          "nodeIndex": "commodities",
+          "nodeLineageTag": "cca02846-6e19-4541-8c51-9d0139112020",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 618.38730182025915,
+            "y": 423.23310886603491
+          },
+          "nodeIndex": "countries",
+          "nodeLineageTag": "d2dd6bec-80d2-4dbd-b71d-209b3864ed27",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 618.39698425378424,
+            "y": 8.0831146451586164
+          },
+          "nodeIndex": "dates",
+          "nodeLineageTag": "6161f2ae-a92f-4320-a1fe-a3d61284d901",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 902.56697386815813,
+            "y": 203.2725119939463
+          },
+          "nodeIndex": "fx_monthly",
+          "nodeLineageTag": "abfec1bb-e436-4c55-b70f-0313038b404c",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50.006675320369979,
+            "y": 358.65682555927856
+          },
+          "nodeIndex": "markets",
+          "nodeLineageTag": "cda6ade5-aaba-4e5d-ade5-e879990a9cde",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 334.18508610051811,
+            "y": 134.51778558401793
+          },
+          "nodeIndex": "prices",
+          "nodeLineageTag": "a0b3c1b8-db48-4e46-892e-9a161ec9ea06",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

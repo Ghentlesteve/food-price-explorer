@@ -1,0 +1,402 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"type\":2,\"version\":\"5.59\"},\"customTheme\":{\"name\":\"FoodPriceExplorer.json\",\"type\":1,\"version\":\"5.65\"}},\"activeSectionIndex\":1,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    },
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "FoodPriceExplorer.json",
+            "path": "FoodPriceExplorer.json",
+            "type": 201
+          }
+        ],
+        "name": "RegisteredResources",
+        "type": 1
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"relationships\":[{\"source\":\"ffe7af51de1b5a09df97\",\"target\":\"d0729fb98db9e6b46b17\",\"type\":3}]}",
+      "displayName": "Overview",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"Filterbd7b75cd4a70e8685410\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"markets\"}},\"Property\":\"zone\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"markets\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"zone\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'North East'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"isHiddenInViewMode\":false}]",
+      "height": 720.00,
+      "name": "a1f0000000000000p001",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0300f03d052a13dc55a7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":648,\"y\":96,\"z\":600,\"width\":296,\"height\":96,\"tabOrder\":600}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"prices.Change Since 2020 %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Change Since 2020 %\"},\"Name\":\"prices.Change Since 2020 %\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"26D\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Change since January 2020'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 96.00,
+          "width": 296.00,
+          "x": 648.00,
+          "y": 96.00,
+          "z": 600.00
+        },
+        {
+          "config": "{\"name\":\"0a605956ca2e1738eea1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":24,\"y\":96,\"z\":400,\"width\":296,\"height\":96,\"tabOrder\":400}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"prices.Price Latest\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Price Latest\"},\"Name\":\"prices.Price Latest\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"26D\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"prices\"}},\"Property\":\"KPI Latest Title\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 96.00,
+          "width": 296.00,
+          "x": 24.00,
+          "y": 96.00,
+          "z": 400.00
+        },
+        {
+          "config": "{\"name\":\"0ac9682892b0dfc10cf6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":24,\"y\":686,\"z\":1000,\"width\":1232,\"height\":24,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Source: WFP market price monitoring via HDX. Retail prices only, per kg, litre or piece. Outliers, pack-size breaks and the incomplete month (Sep 2026) are left out; see Data coverage.\",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"9pt\",\"color\":\"#8A8984\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 24.00,
+          "width": 1232.00,
+          "x": 24.00,
+          "y": 686.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"4c599ba2293abf0249b8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":960,\"y\":96,\"z\":700,\"width\":296,\"height\":96,\"tabOrder\":700}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"prices.Markets Latest\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Markets Latest\"},\"Name\":\"prices.Markets Latest\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"26D\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Markets reporting, latest month'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 96.00,
+          "width": 296.00,
+          "x": 960.00,
+          "y": 96.00,
+          "z": 700.00
+        },
+        {
+          "config": "{\"name\":\"88afdef230f754c48439\",\"layouts\":[{\"id\":0,\"position\":{\"x\":336,\"y\":96,\"z\":500,\"width\":296,\"height\":96,\"tabOrder\":500}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"prices.Change 12M %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Change 12M %\"},\"Name\":\"prices.Change 12M %\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"26D\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Change over the last 12 months'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 96.00,
+          "width": 296.00,
+          "x": 336.00,
+          "y": 96.00,
+          "z": 500.00
+        },
+        {
+          "config": "{\"name\":\"b2d3222075761dc91ad8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":972,\"y\":18,\"z\":300,\"width\":284,\"height\":62,\"tabOrder\":300}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"dates.month\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dates\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"month\"},\"Name\":\"dates.month\"}]},\"syncGroup\":{\"groupName\":\"months\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"header\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Months'\"}}}}}]},\"vcObjects\":{\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"4D\"}}},\"bottom\":{\"expr\":{\"Literal\":{\"Value\":\"4D\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 62.00,
+          "width": 284.00,
+          "x": 972.00,
+          "y": 18.00,
+          "z": 300.00
+        },
+        {
+          "config": "{\"name\":\"cb25359e177b68d8d00e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":24,\"y\":14,\"z\":100,\"width\":740,\"height\":70,\"tabOrder\":100}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"What happened to food prices in North East Nigeria?\",\"textStyle\":{\"fontFamily\":\"Segoe UI Semibold\",\"fontSize\":\"20pt\",\"color\":\"#0B0B0B\"}}]},{\"textRuns\":[{\"value\":\"Median retail price across WFP-monitored markets in Borno, Yobe and Adamawa. The naira was devalued in June 2023.\",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"10pt\",\"color\":\"#52514E\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 70.00,
+          "width": 740.00,
+          "x": 24.00,
+          "y": 14.00,
+          "z": 100.00
+        },
+        {
+          "config": "{\"name\":\"d0729fb98db9e6b46b17\",\"layouts\":[{\"id\":0,\"position\":{\"x\":780,\"y\":208,\"z\":900,\"width\":476,\"height\":470,\"tabOrder\":900}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"prices.commodity_group\",\"active\":true}],\"Y\":[{\"queryRef\":\"prices.Change Since 2020 %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"commodity_group\"},\"Name\":\"prices.commodity_group\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Change Since 2020 %\"},\"Name\":\"prices.Change Since 2020 %\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Change Since 2020 %\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#52514E'\"}}}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#2A78D6'\"}}}}}}}],\"valueAxis\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Price change since January 2020, by food'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"Filter8b710563af3153c13e82\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"prices\"}},\"Property\":\"commodity_group\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"commodity_group\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Rice (local)'\"}}],[{\"Literal\":{\"Value\":\"'Rice (imported)'\"}}],[{\"Literal\":{\"Value\":\"'Beans'\"}}],[{\"Literal\":{\"Value\":\"'Cowpeas'\"}}],[{\"Literal\":{\"Value\":\"'Millet'\"}}],[{\"Literal\":{\"Value\":\"'Sorghum'\"}}],[{\"Literal\":{\"Value\":\"'Yam'\"}}],[{\"Literal\":{\"Value\":\"'Maize flour'\"}}],[{\"Literal\":{\"Value\":\"'Palm oil'\"}}],[{\"Literal\":{\"Value\":\"'Tomatoes'\"}}],[{\"Literal\":{\"Value\":\"'Onions'\"}}],[{\"Literal\":{\"Value\":\"'Sugar'\"}}],[{\"Literal\":{\"Value\":\"'Eggs'\"}}],[{\"Literal\":{\"Value\":\"'Beef'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"isHiddenInViewMode\":false}]",
+          "height": 470.00,
+          "width": 476.00,
+          "x": 780.00,
+          "y": 208.00,
+          "z": 900.00
+        },
+        {
+          "config": "{\"name\":\"e8b7f886a32f0461b267\",\"layouts\":[{\"id\":0,\"position\":{\"x\":24,\"y\":208,\"z\":800,\"width\":740,\"height\":470,\"tabOrder\":800}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"dates.month\",\"active\":true}],\"Y\":[{\"queryRef\":\"prices.Median Price\"}],\"Series\":[{\"queryRef\":\"dates.period\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dates\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"month\"},\"Name\":\"dates.month\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Median Price\"},\"Name\":\"prices.Median Price\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"period\"},\"Name\":\"dates.period\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"legend\":[{\"properties\":{\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#2A78D6'\"}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dates\"}},\"Property\":\"period\"}},\"Right\":{\"Literal\":{\"Value\":\"'Before devaluation'\"}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#EB6834'\"}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dates\"}},\"Property\":\"period\"}},\"Right\":{\"Literal\":{\"Value\":\"'After devaluation (Jun 2023+)'\"}}}}}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"prices\"}},\"Property\":\"Trend Title\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 470.00,
+          "width": 740.00,
+          "x": 24.00,
+          "y": 208.00,
+          "z": 800.00
+        },
+        {
+          "config": "{\"name\":\"ffe7af51de1b5a09df97\",\"layouts\":[{\"id\":0,\"position\":{\"x\":780,\"y\":18,\"z\":200,\"width\":180,\"height\":62,\"tabOrder\":200}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"prices.commodity_group\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"commodity_group\"},\"Name\":\"prices.commodity_group\"}]},\"syncGroup\":{\"groupName\":\"food\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"header\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Food'\"}}}}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"commodity_group\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Rice (local)'\"}}]]}}}]}}}}]},\"vcObjects\":{\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"4D\"}}},\"bottom\":{\"expr\":{\"Literal\":{\"Value\":\"4D\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 62.00,
+          "width": 180.00,
+          "x": 780.00,
+          "y": 18.00,
+          "z": 200.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "North East markets",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"Filterbd7b75cd4a70e8685410\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"markets\"}},\"Property\":\"zone\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"markets\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"zone\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'North East'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"isHiddenInViewMode\":false}]",
+      "height": 720.00,
+      "name": "a1f0000000000000p002",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0ef570b5ba0c9ddf523c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":24,\"y\":208,\"z\":1800,\"width\":560,\"height\":470,\"tabOrder\":1800}}],\"singleVisual\":{\"visualType\":\"azureMap\",\"projections\":{\"Category\":[{\"queryRef\":\"markets.market\",\"active\":true}],\"Y\":[{\"queryRef\":\"Avg(markets.latitude)\"}],\"X\":[{\"queryRef\":\"Avg(markets.longitude)\"}],\"Series\":[{\"queryRef\":\"markets.state\"}],\"Size\":[{\"queryRef\":\"prices.Market Price Latest\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"markets\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"market\"},\"Name\":\"markets.market\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"latitude\"}},\"Function\":1},\"Name\":\"Avg(markets.latitude)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"longitude\"}},\"Function\":1},\"Name\":\"Avg(markets.longitude)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"state\"},\"Name\":\"markets.state\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Market Price Latest\"},\"Name\":\"prices.Market Price Latest\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"visualTooltip\":[{\"properties\":{\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'ReportPage'\"}}},\"section\":{\"expr\":{\"Literal\":{\"Value\":\"'a1f0000000000000tip1'\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"prices\"}},\"Property\":\"Map Title\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 470.00,
+          "width": 560.00,
+          "x": 24.00,
+          "y": 208.00,
+          "z": 1800.00
+        },
+        {
+          "config": "{\"name\":\"1a85f6a47ed21422c352\",\"layouts\":[{\"id\":0,\"position\":{\"x\":960,\"y\":96,\"z\":1700,\"width\":296,\"height\":96,\"tabOrder\":1700}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"prices.Markets Latest\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Markets Latest\"},\"Name\":\"prices.Markets Latest\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"26D\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Markets reporting, latest month'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 96.00,
+          "width": 296.00,
+          "x": 960.00,
+          "y": 96.00,
+          "z": 1700.00
+        },
+        {
+          "config": "{\"name\":\"1b0e404c96d9c91e95ad\",\"layouts\":[{\"id\":0,\"position\":{\"x\":600,\"y\":450,\"z\":2000,\"width\":656,\"height\":228,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"markets.market\",\"active\":true}],\"Y\":[{\"queryRef\":\"prices.Market Price Latest\"}],\"Series\":[{\"queryRef\":\"markets.state\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"markets\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"market\"},\"Name\":\"markets.market\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Market Price Latest\"},\"Name\":\"prices.Market Price Latest\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"state\"},\"Name\":\"markets.state\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Market Price Latest\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"legend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"visualTooltip\":[{\"properties\":{\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'ReportPage'\"}}},\"section\":{\"expr\":{\"Literal\":{\"Value\":\"'a1f0000000000000tip1'\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Price in each market, latest month (₦), coloured by state'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 228.00,
+          "width": 656.00,
+          "x": 600.00,
+          "y": 450.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"1be99b1517b50d04199e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":24,\"y\":96,\"z\":1400,\"width\":296,\"height\":96,\"tabOrder\":1400}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"prices.Market Min Latest\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Market Min Latest\"},\"Name\":\"prices.Market Min Latest\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"26D\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Cheapest market (₦)'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 96.00,
+          "width": 296.00,
+          "x": 24.00,
+          "y": 96.00,
+          "z": 1400.00
+        },
+        {
+          "config": "{\"name\":\"36b43a6e3eb956190027\",\"layouts\":[{\"id\":0,\"position\":{\"x\":600,\"y\":208,\"z\":1900,\"width\":656,\"height\":228,\"tabOrder\":1900}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"dates.month\",\"active\":true}],\"Y\":[{\"queryRef\":\"prices.Median Price\"}],\"Series\":[{\"queryRef\":\"markets.state\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dates\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"markets\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"month\"},\"Name\":\"dates.month\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Median Price\"},\"Name\":\"prices.Median Price\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"state\"},\"Name\":\"markets.state\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"legend\":[{\"properties\":{\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Median price by state (₦)'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 228.00,
+          "width": 656.00,
+          "x": 600.00,
+          "y": 208.00,
+          "z": 1900.00
+        },
+        {
+          "config": "{\"name\":\"5fb35bb16e3b481c028a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":972,\"y\":18,\"z\":1300,\"width\":284,\"height\":62,\"tabOrder\":1300}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"dates.month\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dates\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"month\"},\"Name\":\"dates.month\"}]},\"syncGroup\":{\"groupName\":\"months\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"header\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Months'\"}}}}}]},\"vcObjects\":{\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"4D\"}}},\"bottom\":{\"expr\":{\"Literal\":{\"Value\":\"4D\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 62.00,
+          "width": 284.00,
+          "x": 972.00,
+          "y": 18.00,
+          "z": 1300.00
+        },
+        {
+          "config": "{\"name\":\"7540afe711dcc972076b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":24,\"y\":14,\"z\":1100,\"width\":740,\"height\":70,\"tabOrder\":1100}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Where is food most expensive?\",\"textStyle\":{\"fontFamily\":\"Segoe UI Semibold\",\"fontSize\":\"20pt\",\"color\":\"#0B0B0B\"}}]},{\"textRuns\":[{\"value\":\"Markets in Borno, Yobe and Adamawa, latest month with data. Bubble size shows the price in each market.\",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"10pt\",\"color\":\"#52514E\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 70.00,
+          "width": 740.00,
+          "x": 24.00,
+          "y": 14.00,
+          "z": 1100.00
+        },
+        {
+          "config": "{\"name\":\"79fc9be2f30e87404d9b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":780,\"y\":18,\"z\":1200,\"width\":180,\"height\":62,\"tabOrder\":1200}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"prices.commodity_group\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"commodity_group\"},\"Name\":\"prices.commodity_group\"}]},\"syncGroup\":{\"groupName\":\"food\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"header\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Food'\"}}}}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"commodity_group\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Rice (local)'\"}}]]}}}]}}}}]},\"vcObjects\":{\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"4D\"}}},\"bottom\":{\"expr\":{\"Literal\":{\"Value\":\"4D\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 62.00,
+          "width": 180.00,
+          "x": 780.00,
+          "y": 18.00,
+          "z": 1200.00
+        },
+        {
+          "config": "{\"name\":\"841cdc9493cddebae6f5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":336,\"y\":96,\"z\":1500,\"width\":296,\"height\":96,\"tabOrder\":1500}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"prices.Market Max Latest\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Market Max Latest\"},\"Name\":\"prices.Market Max Latest\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"26D\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Most expensive market (₦)'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 96.00,
+          "width": 296.00,
+          "x": 336.00,
+          "y": 96.00,
+          "z": 1500.00
+        },
+        {
+          "config": "{\"name\":\"aaea6b39644daa1070eb\",\"layouts\":[{\"id\":0,\"position\":{\"x\":648,\"y\":96,\"z\":1600,\"width\":296,\"height\":96,\"tabOrder\":1600}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"prices.Market Spread Latest %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Market Spread Latest %\"},\"Name\":\"prices.Market Spread Latest %\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"26D\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Gap, most vs least expensive'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 96.00,
+          "width": 296.00,
+          "x": 648.00,
+          "y": 96.00,
+          "z": 1600.00
+        },
+        {
+          "config": "{\"name\":\"fe81fe6e31e1b11adbd0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":24,\"y\":686,\"z\":2100,\"width\":1232,\"height\":24,\"tabOrder\":2100}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Each market's price is for the latest month in the selection, so markets that stopped reporting drop out rather than showing an old price.\",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"9pt\",\"color\":\"#8A8984\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 24.00,
+          "width": 1232.00,
+          "x": 24.00,
+          "y": 686.00,
+          "z": 2100.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Nigeria vs Niger",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"Filterb09ef6bfbab075afbe1d\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"prices\"}},\"Property\":\"commodity_group\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"commodity_group\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Millet'\"}}],[{\"Literal\":{\"Value\":\"'Sorghum'\"}}],[{\"Literal\":{\"Value\":\"'Rice (imported)'\"}}],[{\"Literal\":{\"Value\":\"'Cowpeas'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"isHiddenInViewMode\":false},{\"name\":\"Filterfc1839dcb293814eb5b4\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dates\"}},\"Property\":\"year\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dates\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"year\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2020L\"}}],[{\"Literal\":{\"Value\":\"2021L\"}}],[{\"Literal\":{\"Value\":\"2022L\"}}],[{\"Literal\":{\"Value\":\"2023L\"}}],[{\"Literal\":{\"Value\":\"2024L\"}}],[{\"Literal\":{\"Value\":\"2025L\"}}],[{\"Literal\":{\"Value\":\"2026L\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"isHiddenInViewMode\":false},{\"name\":\"Filter1d33ea38e3feeb6504e6\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"markets\"}},\"Property\":\"zone\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"markets\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"zone\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'North East'\"}}],[{\"Literal\":{\"Value\":\"'Niger'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"isHiddenInViewMode\":false}]",
+      "height": 720.00,
+      "name": "a1f0000000000000p003",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"1c5153ea37e70d035cac\",\"layouts\":[{\"id\":0,\"position\":{\"x\":24,\"y\":14,\"z\":2200,\"width\":740,\"height\":70,\"tabOrder\":2200}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Nigeria vs Niger: is it the food or the currency?\",\"textStyle\":{\"fontFamily\":\"Segoe UI Semibold\",\"fontSize\":\"20pt\",\"color\":\"#0B0B0B\"}}]},{\"textRuns\":[{\"value\":\"Same staples, indexed to January 2020 = 100. Both countries' prices are from WFP market monitoring.\",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"10pt\",\"color\":\"#52514E\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 70.00,
+          "width": 740.00,
+          "x": 24.00,
+          "y": 14.00,
+          "z": 2200.00
+        },
+        {
+          "config": "{\"name\":\"6a03a26069784fe39361\",\"layouts\":[{\"id\":0,\"position\":{\"x\":24,\"y\":96,\"z\":2400,\"width\":1232,\"height\":122,\"tabOrder\":2400}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"countries.country\"},{\"queryRef\":\"prices.Latest Month Label\"},{\"queryRef\":\"prices.Change Since 2020 %\"},{\"queryRef\":\"prices.Change Since 2020 USD %\"},{\"queryRef\":\"fx_monthly.FX Change Since 2020 %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"n\",\"Entity\":\"countries\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"fx_monthly\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"country\"},\"Name\":\"countries.country\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Latest Month Label\"},\"Name\":\"prices.Latest Month Label\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Change Since 2020 %\"},\"Name\":\"prices.Change Since 2020 %\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Change Since 2020 USD %\"},\"Name\":\"prices.Change Since 2020 USD %\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"FX Change Since 2020 %\"},\"Name\":\"fx_monthly.FX Change Since 2020 %\"}]},\"columnProperties\":{\"prices.Latest Month Label\":{\"displayName\":\"Latest month\"},\"prices.Change Since 2020 %\":{\"displayName\":\"Price change since Jan 2020, local currency\"},\"prices.Change Since 2020 USD %\":{\"displayName\":\"Price change since Jan 2020, in USD\"},\"fx_monthly.FX Change Since 2020 %\":{\"displayName\":\"Local currency per USD, change since Jan 2020\"},\"countries.country\":{\"displayName\":\"Country\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"total\":[{\"properties\":{\"totals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 122.00,
+          "width": 1232.00,
+          "x": 24.00,
+          "y": 96.00,
+          "z": 2400.00
+        },
+        {
+          "config": "{\"name\":\"7a79bd354778d980a6f5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":24,\"y\":686,\"z\":2800,\"width\":1232,\"height\":24,\"tabOrder\":2800}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Nigeria: North East markets only. USD prices use the exchange rate WFP applied each month. Niger uses the CFA franc (XOF), pegged to the euro.\",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"9pt\",\"color\":\"#8A8984\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 24.00,
+          "width": 1232.00,
+          "x": 24.00,
+          "y": 686.00,
+          "z": 2800.00
+        },
+        {
+          "config": "{\"name\":\"82d24587a70ab4be8263\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1046,\"y\":18,\"z\":2300,\"width\":210,\"height\":62,\"tabOrder\":2300}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"prices.commodity_group\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"commodity_group\"},\"Name\":\"prices.commodity_group\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"header\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Food'\"}}}}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"commodity_group\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Millet'\"}}]]}}}]}}}}]},\"vcObjects\":{\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"4D\"}}},\"bottom\":{\"expr\":{\"Literal\":{\"Value\":\"4D\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 62.00,
+          "width": 210.00,
+          "x": 1046.00,
+          "y": 18.00,
+          "z": 2300.00
+        },
+        {
+          "config": "{\"name\":\"c3865e81f947b192a560\",\"layouts\":[{\"id\":0,\"position\":{\"x\":24,\"y\":234,\"z\":2500,\"width\":400,\"height\":444,\"tabOrder\":2500}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"dates.month\",\"active\":true}],\"Y\":[{\"queryRef\":\"prices.Price Index (Jan 2020 = 100)\"}],\"Series\":[{\"queryRef\":\"countries.country\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dates\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0},{\"Name\":\"n\",\"Entity\":\"countries\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"month\"},\"Name\":\"dates.month\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Price Index (Jan 2020 = 100)\"},\"Name\":\"prices.Price Index (Jan 2020 = 100)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"country\"},\"Name\":\"countries.country\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"legend\":[{\"properties\":{\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Price in local currency (Jan 2020 = 100)'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 444.00,
+          "width": 400.00,
+          "x": 24.00,
+          "y": 234.00,
+          "z": 2500.00
+        },
+        {
+          "config": "{\"name\":\"f81c34a5a97cc6114f25\",\"layouts\":[{\"id\":0,\"position\":{\"x\":856,\"y\":234,\"z\":2700,\"width\":400,\"height\":444,\"tabOrder\":2700}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"dates.month\",\"active\":true}],\"Y\":[{\"queryRef\":\"fx_monthly.FX Index (Jan 2020 = 100)\"}],\"Series\":[{\"queryRef\":\"countries.country\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dates\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"fx_monthly\",\"Type\":0},{\"Name\":\"n\",\"Entity\":\"countries\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"month\"},\"Name\":\"dates.month\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"FX Index (Jan 2020 = 100)\"},\"Name\":\"fx_monthly.FX Index (Jan 2020 = 100)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"country\"},\"Name\":\"countries.country\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"legend\":[{\"properties\":{\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Local currency per US dollar (Jan 2020 = 100)'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 444.00,
+          "width": 400.00,
+          "x": 856.00,
+          "y": 234.00,
+          "z": 2700.00
+        },
+        {
+          "config": "{\"name\":\"fe718d46d3afcc940f97\",\"layouts\":[{\"id\":0,\"position\":{\"x\":440,\"y\":234,\"z\":2600,\"width\":400,\"height\":444,\"tabOrder\":2600}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"dates.month\",\"active\":true}],\"Y\":[{\"queryRef\":\"prices.Price Index USD (Jan 2020 = 100)\"}],\"Series\":[{\"queryRef\":\"countries.country\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dates\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0},{\"Name\":\"n\",\"Entity\":\"countries\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"month\"},\"Name\":\"dates.month\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Price Index USD (Jan 2020 = 100)\"},\"Name\":\"prices.Price Index USD (Jan 2020 = 100)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"n\"}},\"Property\":\"country\"},\"Name\":\"countries.country\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"legend\":[{\"properties\":{\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Price in US dollars (Jan 2020 = 100)'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 444.00,
+          "width": 400.00,
+          "x": 440.00,
+          "y": 234.00,
+          "z": 2600.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Data coverage",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"Filterf47e77458e1c6fa55a55\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"markets\"}},\"Property\":\"country\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"markets\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"country\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Nigeria'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"isHiddenInViewMode\":false},{\"name\":\"Filtere0b7a00140c32462fa71\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dates\"}},\"Property\":\"year\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dates\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"year\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2015L\"}}],[{\"Literal\":{\"Value\":\"2016L\"}}],[{\"Literal\":{\"Value\":\"2017L\"}}],[{\"Literal\":{\"Value\":\"2018L\"}}],[{\"Literal\":{\"Value\":\"2019L\"}}],[{\"Literal\":{\"Value\":\"2020L\"}}],[{\"Literal\":{\"Value\":\"2021L\"}}],[{\"Literal\":{\"Value\":\"2022L\"}}],[{\"Literal\":{\"Value\":\"2023L\"}}],[{\"Literal\":{\"Value\":\"2024L\"}}],[{\"Literal\":{\"Value\":\"2025L\"}}],[{\"Literal\":{\"Value\":\"2026L\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"isHiddenInViewMode\":false}]",
+      "height": 720.00,
+      "name": "a1f0000000000000p004",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"1201fc23d3571d264fc6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":24,\"y\":14,\"z\":2900,\"width\":740,\"height\":70,\"tabOrder\":2900}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Where the data comes from\",\"textStyle\":{\"fontFamily\":\"Segoe UI Semibold\",\"fontSize\":\"20pt\",\"color\":\"#0B0B0B\"}}]},{\"textRuns\":[{\"value\":\"WFP monitors Nigerian markets mainly where it runs humanitarian operations.\",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"10pt\",\"color\":\"#52514E\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 70.00,
+          "width": 740.00,
+          "x": 24.00,
+          "y": 14.00,
+          "z": 2900.00
+        },
+        {
+          "config": "{\"name\":\"4d89843d952a96b2f948\",\"layouts\":[{\"id\":0,\"position\":{\"x\":420,\"y\":96,\"z\":3100,\"width\":836,\"height\":280,\"tabOrder\":3100}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"dates.month\",\"active\":true}],\"Y\":[{\"queryRef\":\"prices.Markets Reporting\"}],\"Series\":[{\"queryRef\":\"markets.zone\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dates\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"markets\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"month\"},\"Name\":\"dates.month\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Markets Reporting\"},\"Name\":\"prices.Markets Reporting\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"zone\"},\"Name\":\"markets.zone\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"legend\":[{\"properties\":{\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Nigerian markets reporting retail prices each month, by zone'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 280.00,
+          "width": 836.00,
+          "x": 420.00,
+          "y": 96.00,
+          "z": 3100.00
+        },
+        {
+          "config": "{\"name\":\"c1e203dafbeaac012622\",\"layouts\":[{\"id\":0,\"position\":{\"x\":420,\"y\":392,\"z\":3200,\"width\":836,\"height\":286,\"tabOrder\":3200}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"markets.zone\",\"active\":true},{\"queryRef\":\"markets.state\"}],\"Columns\":[{\"queryRef\":\"dates.year\",\"active\":true}],\"Values\":[{\"queryRef\":\"prices.Markets Reporting\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"markets\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dates\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"zone\"},\"Name\":\"markets.zone\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"state\"},\"Name\":\"markets.state\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"year\"},\"Name\":\"dates.year\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Markets Reporting\"},\"Name\":\"prices.Markets Reporting\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"values\":[{\"properties\":{\"backColor\":{\"solid\":{\"color\":{\"expr\":{\"FillRule\":{\"Input\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"prices\"}},\"Property\":\"Markets Reporting\"}},\"FillRule\":{\"linearGradient2\":{\"min\":{\"color\":{\"Literal\":{\"Value\":\"'#F0EFEC'\"}}},\"max\":{\"color\":{\"Literal\":{\"Value\":\"'#86B6EF'\"}}},\"nullColoringStrategy\":{\"strategy\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}],\"metadata\":\"prices.Markets Reporting\"}}],\"subTotals\":[{\"properties\":{\"rowSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Markets reporting per year (Nigeria)'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 286.00,
+          "width": 836.00,
+          "x": 420.00,
+          "y": 392.00,
+          "z": 3200.00
+        },
+        {
+          "config": "{\"name\":\"ec524f3ffe56f7e8e466\",\"layouts\":[{\"id\":0,\"position\":{\"x\":24,\"y\":100,\"z\":3000,\"width\":380,\"height\":560,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"What the data covers\",\"textStyle\":{\"fontFamily\":\"Segoe UI Semibold\",\"fontSize\":\"12pt\",\"color\":\"#0B0B0B\"}}]},{\"textRuns\":[{\"value\":\"\",\"textStyle\":{\"fontSize\":\"6pt\"}}]},{\"textRuns\":[{\"value\":\"North East (Borno, Yobe, Adamawa): \",\"textStyle\":{\"fontFamily\":\"Segoe UI Semibold\",\"fontSize\":\"10pt\",\"color\":\"#0B0B0B\"}},{\"value\":\"monitored through 2026. Gombe stops in January 2023.\",\"textStyle\":{\"fontSize\":\"10pt\",\"color\":\"#52514E\"}}]},{\"textRuns\":[{\"value\":\"\",\"textStyle\":{\"fontSize\":\"6pt\"}}]},{\"textRuns\":[{\"value\":\"North West, South West, South East: \",\"textStyle\":{\"fontFamily\":\"Segoe UI Semibold\",\"fontSize\":\"10pt\",\"color\":\"#0B0B0B\"}},{\"value\":\"monitored until January 2023, then stop.\",\"textStyle\":{\"fontSize\":\"10pt\",\"color\":\"#52514E\"}}]},{\"textRuns\":[{\"value\":\"\",\"textStyle\":{\"fontSize\":\"6pt\"}}]},{\"textRuns\":[{\"value\":\"North Central, South South: \",\"textStyle\":{\"fontFamily\":\"Segoe UI Semibold\",\"fontSize\":\"10pt\",\"color\":\"#0B0B0B\"}},{\"value\":\"no price data in this dataset.\",\"textStyle\":{\"fontSize\":\"10pt\",\"color\":\"#52514E\"}}]},{\"textRuns\":[{\"value\":\"\",\"textStyle\":{\"fontSize\":\"6pt\"}}]},{\"textRuns\":[{\"value\":\"So the dashboard focuses on the North East. It is not a national price index.\",\"textStyle\":{\"fontSize\":\"10pt\",\"color\":\"#52514E\"}}]},{\"textRuns\":[{\"value\":\"\",\"textStyle\":{\"fontSize\":\"6pt\"}}]},{\"textRuns\":[{\"value\":\"Data preparation\",\"textStyle\":{\"fontFamily\":\"Segoe UI Semibold\",\"fontSize\":\"12pt\",\"color\":\"#0B0B0B\"}}]},{\"textRuns\":[{\"value\":\"\",\"textStyle\":{\"fontSize\":\"6pt\"}}]},{\"textRuns\":[{\"value\":\"Prices are converted to a common unit (per kg, litre or piece) and food names are harmonised across the two countries. 672 of 160,117 records are left out of the medians: 333 outliers (more than 5x or less than 0.2x the monthly median for the same food), 245 in months where a whole series jumps or falls more than 3x, which points to a pack-size change in the source (sugar in Oct-Nov 2024 and Jul-Sep 2026), and 94 from September 2026, when only 4 markets had reported.\",\"textStyle\":{\"fontSize\":\"10pt\",\"color\":\"#52514E\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 560.00,
+          "width": 380.00,
+          "x": 24.00,
+          "y": 100.00,
+          "z": 3000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"objects\":{\"pageInformation\":[{\"properties\":{\"pageInformationType\":{\"expr\":{\"Literal\":{\"Value\":\"'Tooltip'\"}}}}}],\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#FFFFFF'\"}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]},\"visibility\":1,\"type\":1}",
+      "displayName": "Market tooltip",
+      "displayOption": 3,
+      "filters": "[]",
+      "height": 240.00,
+      "name": "a1f0000000000000tip1",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"692ee83a59be9d50e0d7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":3300,\"width\":320,\"height\":70,\"tabOrder\":3300}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"prices.Market Price Latest\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Market Price Latest\"},\"Name\":\"prices.Market Price Latest\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"20D\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"prices\"}},\"Property\":\"Tooltip Title\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 70.00,
+          "width": 320.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 3300.00
+        },
+        {
+          "config": "{\"name\":\"903d9882ff4caf5166ac\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":70,\"z\":3400,\"width\":320,\"height\":170,\"tabOrder\":3400}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"dates.month\",\"active\":true}],\"Y\":[{\"queryRef\":\"prices.Median Price\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dates\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"prices\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"month\"},\"Name\":\"dates.month\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Median Price\"},\"Name\":\"prices.Median Price\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"legend\":[{\"properties\":{\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#2A78D6'\"}}}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Price trend in this market (₦)'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 170.00,
+          "width": 320.00,
+          "x": 0.00,
+          "y": 70.00,
+          "z": 3400.00
+        }
+      ],
+      "width": 320.00
+    }
+  ],
+  "theme": "FoodPriceExplorer.json"
+}

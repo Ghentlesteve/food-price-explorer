@@ -1,0 +1,89 @@
+table markets
+	lineageTag: cda6ade5-aaba-4e5d-ade5-e879990a9cde
+
+	column country
+		dataType: string
+		lineageTag: b10dbcea-0e2e-48ed-a299-9943cebe1ba3
+		summarizeBy: none
+		sourceColumn: country
+
+	column market_id
+		dataType: int64
+		lineageTag: b72d5896-f4f1-45ad-90cd-ec92491daf16
+		summarizeBy: none
+		sourceColumn: market_id
+
+	column market
+		dataType: string
+		lineageTag: 5a99b45a-d281-40ac-80c7-fb4fdf6dfd88
+		summarizeBy: none
+		sourceColumn: market
+
+	column zone
+		dataType: string
+		lineageTag: c9e16b01-2e58-490c-bc10-79b850ae7916
+		summarizeBy: none
+		sourceColumn: zone
+
+	column state
+		dataType: string
+		lineageTag: 6b23cfb5-b193-47c9-b9f9-f548ef802dcb
+		summarizeBy: none
+		sourceColumn: state
+
+	column lga
+		dataType: string
+		lineageTag: 33dc6bde-aab9-4d87-9324-f849a5aa80ec
+		summarizeBy: none
+		sourceColumn: lga
+
+	column latitude
+		dataType: double
+		lineageTag: 79df299a-c47a-40c7-9884-0c700a49a176
+		summarizeBy: sum
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column longitude
+		dataType: double
+		lineageTag: 5b849038-597c-4648-82e5-a0384dde2c0f
+		summarizeBy: sum
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_month
+		dataType: dateTime
+		formatString: mmm yyyy
+		lineageTag: 89bace9e-2f5f-453a-867e-bbbaf2e1c2aa
+		summarizeBy: none
+		sourceColumn: first_month
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column last_month
+		dataType: dateTime
+		formatString: mmm yyyy
+		lineageTag: f673bc90-8cd0-4b51-919b-7b165a178bcf
+		summarizeBy: none
+		sourceColumn: last_month
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column records
+		dataType: int64
+		lineageTag: d8761d4c-063c-42f3-a8b6-0592d9b8e889
+		summarizeBy: sum
+		sourceColumn: records
+
+	partition markets = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(DataFolder & "markets.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Promoted, {{"country", type text}, {"market_id", Int64.Type}, {"market", type text}, {"zone", type text}, {"state", type text}, {"lga", type text}, {"latitude", type number}, {"longitude", type number}, {"first_month", type date}, {"last_month", type date}, {"records", Int64.Type}}, "en-US")
+				in
+					Typed
+

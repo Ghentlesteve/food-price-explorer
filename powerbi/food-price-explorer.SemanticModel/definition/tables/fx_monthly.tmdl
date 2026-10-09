@@ -1,0 +1,52 @@
+table fx_monthly
+	lineageTag: abfec1bb-e436-4c55-b70f-0313038b404c
+
+	measure 'Exchange Rate (per USD)' = AVERAGE ( fx_monthly[local_per_usd] )
+		formatString: #,0
+		lineageTag: 34664973-128e-43e0-8bce-7f26c6383fcc
+
+	measure 'FX Index (Jan 2020 = 100)' = DIVIDE ( [Exchange Rate (per USD)], CALCULATE ( [Exchange Rate (per USD)], REMOVEFILTERS ( dates ), dates[month] = DATE ( 2020, 1, 1 ) ) ) * 100
+		formatString: #,0
+		lineageTag: 84a4d11b-7e17-40f8-b700-3718ecfc3ab9
+
+	measure 'FX Change Since 2020 %' = VAR lm = [Latest Month] VAR a = CALCULATE ( [Exchange Rate (per USD)], REMOVEFILTERS ( dates ), dates[month] = lm ) VAR b = CALCULATE ( [Exchange Rate (per USD)], REMOVEFILTERS ( dates ), dates[month] = DATE ( 2020, 1, 1 ) ) RETURN DIVIDE ( a - b, b )
+		formatString: +0%;-0%;0%
+		lineageTag: fe76d57f-63c0-4cae-97da-3beb7883991e
+
+	column country
+		dataType: string
+		lineageTag: 1164098d-dae4-4bcd-9705-9d01af93ea17
+		summarizeBy: none
+		sourceColumn: country
+
+	column currency
+		dataType: string
+		lineageTag: 40a862f3-b83b-4011-9f87-15cde6a60811
+		summarizeBy: none
+		sourceColumn: currency
+
+	column month
+		dataType: dateTime
+		formatString: mmm yyyy
+		lineageTag: cd7a3c19-30bc-43ec-a1ac-977f8bcfca19
+		summarizeBy: none
+		sourceColumn: month
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column local_per_usd
+		dataType: double
+		lineageTag: ff10f309-1459-4206-ab44-b29cc8782d37
+		summarizeBy: sum
+		sourceColumn: local_per_usd
+
+	partition fx_monthly = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(DataFolder & "fx_monthly.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Promoted, {{"country", type text}, {"currency", type text}, {"month", type date}, {"local_per_usd", type number}}, "en-US")
+				in
+					Typed
+

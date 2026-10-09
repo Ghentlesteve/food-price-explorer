@@ -1,0 +1,45 @@
+commodity,category,commodity_group,main_unit,countries
+Bananas,vegetables and fruits,Bananas,kg,Nigeria
+Beans (niebe),pulses and nuts,Cowpeas,kg,"Niger, Nigeria"
+Beans (red),pulses and nuts,Beans,kg,Nigeria
+Beans (white),pulses and nuts,Beans,kg,Nigeria
+Bread,cereals and tubers,Bread,piece,Nigeria
+"Cassava meal (gari, yellow)",cereals and tubers,Gari,kg,Nigeria
+Cowpeas,pulses and nuts,Cowpeas,kg,Nigeria
+Cowpeas (brown),pulses and nuts,Cowpeas,kg,Nigeria
+Cowpeas (white),pulses and nuts,Cowpeas,kg,Nigeria
+Eggs,"meat, fish and eggs",Eggs,piece,Nigeria
+Fish,"meat, fish and eggs",Fish,kg,Nigeria
+Fuel (diesel),non-food,Fuel (diesel),litre,Nigeria
+Fuel (petrol-gasoline),non-food,Fuel (petrol-gasoline),litre,Nigeria
+Gari (white),cereals and tubers,Gari,kg,Nigeria
+Groundnuts,pulses and nuts,Groundnuts,kg,Nigeria
+Groundnuts (shelled),pulses and nuts,Groundnuts (shelled),kg,Nigeria
+Maize,cereals and tubers,Maize,kg,"Niger, Nigeria"
+Maize (white),cereals and tubers,Maize,kg,Nigeria
+Maize (yellow),cereals and tubers,Maize,kg,Nigeria
+Maize flour,cereals and tubers,Maize flour,kg,Nigeria
+Meat (beef),"meat, fish and eggs",Meat (beef),kg,Nigeria
+Meat (goat),"meat, fish and eggs",Meat (goat),kg,Nigeria
+Milk (powder),milk and dairy,Milk (powder),kg,Nigeria
+Millet,cereals and tubers,Millet,kg,"Niger, Nigeria"
+Oil (palm),oil and fats,Palm oil,litre,Nigeria
+Oil (vegetable),oil and fats,Vegetable oil,litre,"Niger, Nigeria"
+Onions,vegetables and fruits,Onions,kg,Nigeria
+Oranges,vegetables and fruits,Oranges,kg,Nigeria
+Rice (imported),cereals and tubers,Rice (imported),kg,"Niger, Nigeria"
+Rice (local),cereals and tubers,Rice (local),kg,"Niger, Nigeria"
+"Rice (milled, local)",cereals and tubers,Rice (local),kg,Nigeria
+Salt,miscellaneous food,Salt,kg,"Niger, Nigeria"
+Seasoning (maggi cube),miscellaneous food,Seasoning (maggi cube),kg,Nigeria
+Sorghum,cereals and tubers,Sorghum,kg,"Niger, Nigeria"
+Sorghum (brown),cereals and tubers,Sorghum,kg,Nigeria
+Sorghum (local),cereals and tubers,Sorghum,kg,Niger
+Sorghum (white),cereals and tubers,Sorghum,kg,Nigeria
+Spinach,vegetables and fruits,Spinach,kg,Nigeria
+Sugar,miscellaneous food,Sugar,kg,Nigeria
+Tomatoes,vegetables and fruits,Tomatoes,kg,Nigeria
+Watermelons,vegetables and fruits,Watermelons,kg,Nigeria
+Wheat,cereals and tubers,Wheat,kg,"Niger, Nigeria"
+Yam,cereals and tubers,Yam,kg,Nigeria
+Yam (Abuja),cereals and tubers,Yam,kg,Nigeria

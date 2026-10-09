@@ -1,0 +1,43 @@
+table commodities
+	lineageTag: cca02846-6e19-4541-8c51-9d0139112020
+
+	column commodity
+		dataType: string
+		lineageTag: bee32652-f581-478f-ab8a-0322dedda021
+		summarizeBy: none
+		sourceColumn: commodity
+
+	column category
+		dataType: string
+		lineageTag: 170cf6cc-8f42-45b0-bd07-035e65a53bcc
+		summarizeBy: none
+		sourceColumn: category
+
+	column commodity_group
+		dataType: string
+		lineageTag: d76f3da9-57f9-435f-91dd-84487c4e0340
+		summarizeBy: none
+		sourceColumn: commodity_group
+
+	column main_unit
+		dataType: string
+		lineageTag: 45a46441-8a24-40eb-ac97-d7ae02cc3ed3
+		summarizeBy: none
+		sourceColumn: main_unit
+
+	column countries
+		dataType: string
+		lineageTag: 24580309-6c31-4ad8-83e5-d035dfcbd7ed
+		summarizeBy: none
+		sourceColumn: countries
+
+	partition commodities = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(DataFolder & "commodities.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Promoted, {{"commodity", type text}, {"category", type text}, {"commodity_group", type text}, {"main_unit", type text}, {"countries", type text}}, "en-US")
+				in
+					Typed
+

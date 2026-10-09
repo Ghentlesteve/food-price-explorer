@@ -1,0 +1,407 @@
+createOrReplace
+
+	expression DataFolder = "C:\Users\Kwenev Steve\Documents\Web\Advanced Dashboards\food-price-explorer\data\clean\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+
+	table prices
+
+		measure 'Median Price' = CALCULATE ( MEDIAN ( prices[price_per_unit_local] ), prices[outlier_flag] = FALSE (), prices[is_main_unit] = TRUE (), prices[pricetype] = "Retail" )
+			formatString: #,0
+
+		measure 'Median Price USD' = CALCULATE ( MEDIAN ( prices[price_per_unit_usd] ), prices[outlier_flag] = FALSE (), prices[is_main_unit] = TRUE (), prices[pricetype] = "Retail" )
+			formatString: $#,0.00
+
+		measure 'Latest Month' = CALCULATE ( MAX ( prices[month] ), ALLSELECTED ( dates ) )
+			formatString: mmm yyyy
+
+		measure 'Price Latest' = VAR lm = [Latest Month] RETURN CALCULATE ( [Median Price], REMOVEFILTERS ( dates ), dates[month] = lm )
+			formatString: #,0
+
+		measure 'Price 12M Ago' = VAR lm = [Latest Month] RETURN CALCULATE ( [Median Price], REMOVEFILTERS ( dates ), dates[month] = EDATE ( lm, -12 ) )
+			formatString: #,0
+
+		measure 'Change 12M %' = VAR a = [Price 12M Ago] RETURN DIVIDE ( [Price Latest] - a, a )
+			formatString: +0%;-0%;0%
+
+		measure 'Price Jan 2020' = CALCULATE ( [Median Price], REMOVEFILTERS ( dates ), dates[month] = DATE ( 2020, 1, 1 ) )
+			formatString: #,0
+
+		measure 'Change Since 2020 %' = DIVIDE ( [Price Latest] - [Price Jan 2020], [Price Jan 2020] )
+			formatString: +0%;-0%;0%
+
+		measure 'Markets Reporting' = CALCULATE ( DISTINCTCOUNT ( prices[market_id] ), prices[pricetype] = "Retail" )
+			formatString: #,0
+
+		measure Records = COUNTROWS ( prices )
+			formatString: #,0
+
+		measure 'Market Max Price' = MAXX ( VALUES ( markets[market_id] ), [Median Price] )
+			formatString: #,0
+
+		measure 'Market Min Price' = MINX ( VALUES ( markets[market_id] ), [Median Price] )
+			formatString: #,0
+
+		measure 'Market Spread %' = DIVIDE ( [Market Max Price] - [Market Min Price], [Market Min Price] )
+			formatString: 0%
+
+		measure 'Price Index (Jan 2020 = 100)' = DIVIDE ( [Median Price], [Price Jan 2020] ) * 100
+			formatString: #,0
+
+		measure 'Price Index USD (Jan 2020 = 100)' = DIVIDE ( [Median Price USD], CALCULATE ( [Median Price USD], REMOVEFILTERS ( dates ), dates[month] = DATE ( 2020, 1, 1 ) ) ) * 100
+			formatString: #,0
+
+		measure 'Latest Month Label' = FORMAT ( [Latest Month], "mmm yyyy" )
+
+		column month
+			dataType: dateTime
+			formatString: mmm yyyy
+			summarizeBy: none
+			sourceColumn: month
+
+		column country
+			dataType: string
+			summarizeBy: none
+			sourceColumn: country
+
+		column zone
+			dataType: string
+			summarizeBy: none
+			sourceColumn: zone
+
+		column state
+			dataType: string
+			summarizeBy: none
+			sourceColumn: state
+
+		column lga
+			dataType: string
+			summarizeBy: none
+			sourceColumn: lga
+
+		column market
+			dataType: string
+			summarizeBy: none
+			sourceColumn: market
+
+		column market_id
+			dataType: int64
+			summarizeBy: none
+			sourceColumn: market_id
+
+		column category
+			dataType: string
+			summarizeBy: none
+			sourceColumn: category
+
+		column commodity
+			dataType: string
+			summarizeBy: none
+			sourceColumn: commodity
+
+		column commodity_group
+			dataType: string
+			summarizeBy: none
+			sourceColumn: commodity_group
+
+		column pricetype
+			dataType: string
+			summarizeBy: none
+			sourceColumn: pricetype
+
+		column unit
+			dataType: string
+			summarizeBy: none
+			sourceColumn: unit
+
+		column unit_qty
+			dataType: double
+			summarizeBy: sum
+			sourceColumn: unit_qty
+
+		column std_unit
+			dataType: string
+			summarizeBy: none
+			sourceColumn: std_unit
+
+		column currency
+			dataType: string
+			summarizeBy: none
+			sourceColumn: currency
+
+		column price_local
+			dataType: double
+			summarizeBy: sum
+			sourceColumn: price_local
+
+		column price_usd
+			dataType: double
+			summarizeBy: sum
+			sourceColumn: price_usd
+
+		column price_per_unit_local
+			dataType: double
+			summarizeBy: sum
+			sourceColumn: price_per_unit_local
+
+		column price_per_unit_usd
+			dataType: double
+			summarizeBy: sum
+			sourceColumn: price_per_unit_usd
+
+		column is_main_unit
+			dataType: boolean
+			summarizeBy: none
+			sourceColumn: is_main_unit
+
+		column is_aggregate
+			dataType: boolean
+			summarizeBy: none
+			sourceColumn: is_aggregate
+
+		column outlier_flag
+			dataType: boolean
+			summarizeBy: none
+			sourceColumn: outlier_flag
+
+		partition prices = m
+			mode: import
+			source =
+					let
+						Source = Csv.Document(File.Contents(DataFolder & "prices.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+						Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+						Typed = Table.TransformColumnTypes(Promoted, {{"month", type date}, {"country", type text}, {"zone", type text}, {"state", type text}, {"lga", type text}, {"market", type text}, {"market_id", Int64.Type}, {"category", type text}, {"commodity", type text}, {"commodity_group", type text}, {"pricetype", type text}, {"unit", type text}, {"unit_qty", type number}, {"std_unit", type text}, {"currency", type text}, {"price_local", type number}, {"price_usd", type number}, {"price_per_unit_local", type number}, {"price_per_unit_usd", type number}, {"is_main_unit", type logical}, {"is_aggregate", type logical}, {"outlier_flag", type logical}}, "en-US")
+					in
+						Typed
+
+	table markets
+
+		column country
+			dataType: string
+			summarizeBy: none
+			sourceColumn: country
+
+		column market_id
+			dataType: int64
+			summarizeBy: none
+			sourceColumn: market_id
+
+		column market
+			dataType: string
+			summarizeBy: none
+			sourceColumn: market
+
+		column zone
+			dataType: string
+			summarizeBy: none
+			sourceColumn: zone
+
+		column state
+			dataType: string
+			summarizeBy: none
+			sourceColumn: state
+
+		column lga
+			dataType: string
+			summarizeBy: none
+			sourceColumn: lga
+
+		column latitude
+			dataType: double
+			summarizeBy: none
+			sourceColumn: latitude
+
+		column longitude
+			dataType: double
+			summarizeBy: none
+			sourceColumn: longitude
+
+		column first_month
+			dataType: dateTime
+			formatString: mmm yyyy
+			summarizeBy: none
+			sourceColumn: first_month
+
+		column last_month
+			dataType: dateTime
+			formatString: mmm yyyy
+			summarizeBy: none
+			sourceColumn: last_month
+
+		column records
+			dataType: int64
+			summarizeBy: sum
+			sourceColumn: records
+
+		partition markets = m
+			mode: import
+			source =
+					let
+						Source = Csv.Document(File.Contents(DataFolder & "markets.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+						Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+						Typed = Table.TransformColumnTypes(Promoted, {{"country", type text}, {"market_id", Int64.Type}, {"market", type text}, {"zone", type text}, {"state", type text}, {"lga", type text}, {"latitude", type number}, {"longitude", type number}, {"first_month", type date}, {"last_month", type date}, {"records", Int64.Type}}, "en-US")
+					in
+						Typed
+
+	table commodities
+
+		column commodity
+			dataType: string
+			summarizeBy: none
+			sourceColumn: commodity
+
+		column category
+			dataType: string
+			summarizeBy: none
+			sourceColumn: category
+
+		column commodity_group
+			dataType: string
+			summarizeBy: none
+			sourceColumn: commodity_group
+
+		column main_unit
+			dataType: string
+			summarizeBy: none
+			sourceColumn: main_unit
+
+		column countries
+			dataType: string
+			summarizeBy: none
+			sourceColumn: countries
+
+		partition commodities = m
+			mode: import
+			source =
+					let
+						Source = Csv.Document(File.Contents(DataFolder & "commodities.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+						Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+						Typed = Table.TransformColumnTypes(Promoted, {{"commodity", type text}, {"category", type text}, {"commodity_group", type text}, {"main_unit", type text}, {"countries", type text}}, "en-US")
+					in
+						Typed
+
+	table fx_monthly
+
+		measure 'Exchange Rate (per USD)' = AVERAGE ( fx_monthly[local_per_usd] )
+			formatString: #,0
+
+		measure 'FX Index (Jan 2020 = 100)' = DIVIDE ( [Exchange Rate (per USD)], CALCULATE ( [Exchange Rate (per USD)], REMOVEFILTERS ( dates ), dates[month] = DATE ( 2020, 1, 1 ) ) ) * 100
+			formatString: #,0
+
+		column country
+			dataType: string
+			summarizeBy: none
+			sourceColumn: country
+
+		column currency
+			dataType: string
+			summarizeBy: none
+			sourceColumn: currency
+
+		column month
+			dataType: dateTime
+			formatString: mmm yyyy
+			summarizeBy: none
+			sourceColumn: month
+
+		column local_per_usd
+			dataType: double
+			summarizeBy: sum
+			sourceColumn: local_per_usd
+
+		partition fx_monthly = m
+			mode: import
+			source =
+					let
+						Source = Csv.Document(File.Contents(DataFolder & "fx_monthly.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+						Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+						Typed = Table.TransformColumnTypes(Promoted, {{"country", type text}, {"currency", type text}, {"month", type date}, {"local_per_usd", type number}}, "en-US")
+					in
+						Typed
+
+	table dates
+
+		column month
+			dataType: dateTime
+			formatString: mmm yyyy
+			summarizeBy: none
+			sourceColumn: month
+
+		column year
+			dataType: int64
+			summarizeBy: none
+			sourceColumn: year
+
+		column month_num
+			dataType: int64
+			summarizeBy: none
+			sourceColumn: month_num
+
+		column month_name
+			dataType: string
+			summarizeBy: none
+			sourceColumn: month_name
+
+		column month_label
+			dataType: string
+			summarizeBy: none
+			sourceColumn: month_label
+
+		column period
+			dataType: string
+			summarizeBy: none
+			sourceColumn: period
+
+		partition dates = m
+			mode: import
+			source =
+					let
+						Source = Csv.Document(File.Contents(DataFolder & "dates.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+						Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+						Typed = Table.TransformColumnTypes(Promoted, {{"month", type date}, {"year", Int64.Type}, {"month_num", Int64.Type}, {"month_name", type text}, {"month_label", type text}, {"period", type text}}, "en-US")
+					in
+						Typed
+
+	table countries
+
+		column country
+			dataType: string
+			summarizeBy: none
+			sourceColumn: country
+
+		column currency
+			dataType: string
+			summarizeBy: none
+			sourceColumn: currency
+
+		partition countries = m
+			mode: import
+			source =
+					let
+						Source = Csv.Document(File.Contents(DataFolder & "countries.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+						Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+						Typed = Table.TransformColumnTypes(Promoted, {{"country", type text}, {"currency", type text}}, "en-US")
+					in
+						Typed
+
+	relationship rel_prices_markets
+		fromColumn: prices.market_id
+		toColumn: markets.market_id
+
+	relationship rel_prices_commodities
+		fromColumn: prices.commodity
+		toColumn: commodities.commodity
+
+	relationship rel_prices_dates
+		fromColumn: prices.month
+		toColumn: dates.month
+
+	relationship rel_prices_countries
+		fromColumn: prices.country
+		toColumn: countries.country
+
+	relationship rel_fx_monthly_dates
+		fromColumn: fx_monthly.month
+		toColumn: dates.month
+
+	relationship rel_fx_monthly_countries
+		fromColumn: fx_monthly.country
+		toColumn: countries.country

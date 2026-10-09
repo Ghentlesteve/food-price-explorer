@@ -1,0 +1,148 @@
+country,market_id,market,zone,state,lga,latitude,longitude,first_month,last_month,records
+Niger,543,Abala,Niger,Tillaberi,Abala,14.94,3.43,2009-04-01,2026-08-01,703
+Niger,544,Abalak,Niger,Tahoua,Abalak,15.45,6.28,2008-01-01,2026-08-01,900
+Niger,545,Aderbissinat,Niger,Agadez,Aderbissinat,15.63,7.89,2008-01-01,2026-08-01,903
+Niger,546,Agadez Commune,Niger,Agadez,Tchighozerine,16.97,7.99,1990-01-01,2026-08-01,2500
+Niger,548,Arlit,Niger,Agadez,Arlit,18.74,7.39,1994-01-01,2026-08-01,1194
+Niger,549,Ayorou,Niger,Tillaberi,Ayerou,14.73,0.92,2009-03-01,2026-08-01,962
+Niger,550,Badaguichiri,Niger,Tahoua,Illela,14.52,5.37,1994-01-01,2026-08-01,995
+Niger,551,Bakin Birgi,Niger,Zinder,Tanout,14.26,8.79,1994-01-01,2019-12-01,801
+Niger,553,Bankilare,Niger,Tillaberi,Bankillare,14.58,0.73,2009-03-01,2026-08-01,756
+Niger,554,Birnin Gaoure,Niger,Dosso,Boboye,13.08,2.91,2009-01-01,2026-08-01,777
+Niger,555,Bonfeba,Niger,Tillaberi,Tillaberi,14.38,1.21,2009-03-01,2010-02-01,52
+Niger,556,Bonkaney,Niger,Niamey,Niamey,13.52,2.12,2009-01-01,2026-08-01,907
+Niger,557,Bouza,Niger,Tahoua,Bouza,14.42,6.04,2009-01-01,2026-08-01,842
+Niger,558,Chadakori,Niger,Maradi,Guidan Roumji,13.68,6.99,2009-03-01,2010-02-01,47
+Niger,560,Dan Issa,Niger,Maradi,Madarounfa,13.2,7.26,1994-01-01,2026-08-01,1462
+Niger,561,Dan-Goulbi,Niger,Maradi,Dakoro,13.98,6.55,2009-03-01,2010-02-01,53
+Niger,562,Diffa Commune,Niger,Diffa,Diffa,13.32,12.61,1994-01-01,2026-08-01,1547
+Niger,564,Dogon Kiria,Niger,Dosso,Doutchi,14.06,4.35,2009-01-01,2020-03-01,441
+Niger,565,Dogondoutchi,Niger,Dosso,Doutchi,13.64,4.03,1994-01-01,2026-08-01,1091
+Niger,566,Dole,Niger,Zinder,Mirriah,13.8,8.99,2009-01-01,2020-10-01,514
+Niger,567,Dosso Commune,Niger,Dosso,Dosso,13.05,3.19,1990-01-01,2026-08-01,2253
+Niger,568,Dungass,Niger,Zinder,Dungass,13.06,9.34,1994-01-01,2026-08-01,1096
+Niger,572,Falwel,Niger,Dosso,Loga,13.64,3.26,2009-03-01,2010-02-01,48
+Niger,573,Filingue,Niger,Tillaberi,Filingue,14.35,3.32,1994-01-01,2026-08-01,1129
+Niger,574,Galmi,Niger,Tahoua,Malbaza,13.96,5.67,2009-01-01,2026-08-01,869
+Niger,575,Garare,Niger,Maradi,Tessaoua,13.8,7.99,2009-01-01,2021-03-01,494
+Niger,576,Garhanga,Niger,Tahoua,Keita,14.56,5.76,2009-03-01,2019-12-01,322
+Niger,577,Gaya,Niger,Dosso,Gaya,11.88,3.45,1994-01-01,2026-08-01,1620
+Niger,578,Gotheye,Niger,Tillaberi,Gotheye,13.86,1.57,2009-01-01,2026-08-01,918
+Niger,579,Goudoumaria,Niger,Diffa,Goudoumaria,13.71,11.19,2009-04-01,2026-08-01,655
+Niger,580,Goure,Niger,Zinder,Goure,13.98,10.27,1994-01-01,2026-08-01,1416
+Niger,581,Guidan Roumdji,Niger,Maradi,Guidan Roumji,13.66,6.7,2009-01-01,2026-08-01,886
+Niger,582,Guidiguir,Niger,Zinder,Goure,13.67,9.83,2009-01-01,2019-10-01,434
+Niger,583,Guidimouni,Niger,Zinder,Mirriah,13.69,9.51,2009-03-01,2010-02-01,49
+Niger,584,Harobanda,Niger,Niamey,Niamey,13.52,2.12,1994-01-01,2026-08-01,1275
+Niger,585,Ingall,Niger,Agadez,InGall,16.79,6.93,2009-01-01,2026-08-01,847
+Niger,586,Jataka,Niger,Tahoua,Madaoua,13.77,6.17,2009-03-01,2010-02-01,58
+Niger,587,Kanembakache,Niger,Maradi,Mayahi,13.96,7.67,2009-03-01,2010-02-01,51
+Niger,588,Kaou,Niger,Tahoua,Tchintabara,15.6,5.38,2009-03-01,2019-12-01,359
+Niger,589,Karofane,Niger,Tahoua,Bouza,14.31,6.15,2009-04-01,2026-08-01,755
+Niger,590,Katako,Niger,Niamey,Niamey,13.52,2.12,1994-01-01,2026-08-01,1527
+Niger,591,Kazoe,Niger,Zinder,Goure,14.22,9.97,2009-03-01,2026-08-01,780
+Niger,592,Keita,Niger,Tahoua,Keita,14.76,5.77,2009-01-01,2020-10-01,354
+Niger,593,Kirtachi,Niger,Tillaberi,Kollo,12.79,2.48,1994-02-01,2026-08-01,1311
+Niger,594,Konni,Niger,Tahoua,Konni,13.79,5.25,2009-01-01,2026-08-01,853
+Niger,595,Kornaka,Niger,Maradi,Dakoro,14.1,6.9,2010-04-01,2020-02-01,307
+Niger,596,Koundoumaoua,Niger,Zinder,Takieta,13.66,8.36,1994-01-01,2026-08-01,1177
+Niger,597,Loga,Niger,Dosso,Loga,13.61,3.24,1994-01-01,2026-08-01,1178
+Niger,598,Magaria,Niger,Zinder,Magaria,13.18,8.5,2009-01-01,2026-08-01,906
+Niger,599,Maidjirgui,Niger,Maradi,Tessaoua,13.74,8.13,2009-03-01,2010-02-01,47
+Niger,600,Maine Soroa,Niger,Diffa,Maine Soroa,13.21,12.02,2009-01-01,2026-08-01,902
+Niger,601,Mangaize,Niger,Tillaberi,Ouallam,14.68,1.95,2009-01-01,2026-08-01,852
+Niger,602,Maradi Commune,Niger,Maradi,Madarounfa,13.5,7.1,1990-01-01,2026-08-01,2530
+Niger,603,Matameye,Niger,Zinder,Kantché,13.42,8.47,1994-01-01,2026-08-01,1240
+Niger,604,Mayahi,Niger,Maradi,Mayahi,13.96,7.67,2009-01-01,2026-08-01,873
+Niger,605,Mokko,Niger,Dosso,Dosso,13.18,3.27,2009-03-01,2026-08-01,691
+Niger,606,Nguigmi,Niger,Diffa,N'guigmi,14.25,13.11,1994-01-01,2026-08-01,1392
+Niger,607,Ouallam,Niger,Tillaberi,Ouallam,14.32,2.09,1994-01-01,2026-08-01,1129
+Niger,608,Ourno,Niger,Tahoua,Madaoua,14.3,6.45,2010-04-01,2019-12-01,333
+Niger,609,Petit Marche,Niger,Niamey,Niamey,13.52,2.12,2000-01-01,2022-06-01,1534
+Niger,610,Sabon Machi,Niger,Maradi,Dakoro,13.99,6.59,1994-01-01,2026-08-01,1104
+Niger,611,Sassoumbroum,Niger,Zinder,Magaria,13.12,8.49,2009-03-01,2010-02-01,50
+Niger,612,Soubdou,Niger,Zinder,Goure,13.79,10.53,2009-03-01,2010-02-01,45
+Niger,613,Tahoua Commune,Niger,Tahoua,Tahoua,14.89,5.27,1994-01-01,2020-12-01,894
+Niger,615,Tanout,Niger,Zinder,Tanout,14.97,8.89,2009-01-01,2026-08-01,878
+Niger,616,Tchadoua,Niger,Maradi,Aguie,13.55,7.45,2009-01-01,2026-08-01,841
+Niger,617,Tchintabaraden,Niger,Tahoua,Tchintabara,15.9,5.8,1994-01-01,2026-08-01,1063
+Niger,618,Tera,Niger,Tillaberi,Tera,14.01,0.75,2009-01-01,2026-08-01,915
+Niger,619,Tessaoua,Niger,Maradi,Tessaoua,13.76,7.99,1994-01-01,2026-08-01,1197
+Niger,620,Tillaberi,Niger,Tillaberi,Tillaberi,14.21,1.45,1990-01-01,2022-06-01,1631
+Niger,622,Torodi,Niger,Tillaberi,Torodi,13.12,1.8,1994-01-01,2021-02-01,782
+Niger,623,Tounfafi,Niger,Tahoua,Madaoua,14.29,6.42,1994-01-01,2026-08-01,1301
+Niger,624,Wadata,Niger,Niamey,Niamey,13.52,2.12,2009-01-01,2026-08-01,902
+Niger,626,Balayara,Niger,Tillaberi,Tagazar,13.78,2.95,1994-01-01,2026-08-01,1139
+Niger,627,Tillaberi Commune,Niger,Tillaberi,Tillaberi,14.21,1.45,1994-01-01,2026-08-01,1313
+Niger,628,Dakoro,Niger,Maradi,Dakoro,14.5,6.75,2009-01-01,2026-08-01,856
+Niger,629,Nguel Kolo,Niger,Diffa,Diffa,13.32,12.62,2009-01-01,2020-12-01,389
+Niger,1281,Chetimari,Niger,Diffa,Diffa,13.18,12.42,2009-03-01,2010-02-01,46
+Niger,1463,Zinder Commune,Niger,Zinder,Mirriah,13.81,8.98,1990-01-01,2026-08-01,2047
+Nigeria,1037,Illela (CBM),North West,Sokoto,Gada,13.64,5.28,2002-01-01,2019-04-01,618
+Nigeria,1038,Jibia (CBM),North West,Katsina,Jibia,13.08,7.24,2002-01-01,2017-03-01,515
+Nigeria,1039,Mai Adoua (CBM),North West,Katsina,Mai'Adua,13.18,8.23,2002-11-01,2019-04-01,570
+Nigeria,1040,Damassack (CBM),North East,Borno,Mobbar,13.01,12.56,2003-02-01,2026-08-01,1150
+Nigeria,1041,Mai Gatari (CBM),North West,Jigawa,Maigatari,12.78,9.44,2009-01-01,2017-01-01,337
+Nigeria,1967,Aba,South East,Abia,Oboma Ngwa,5.15,7.36,2014-07-01,2023-01-01,1039
+Nigeria,1968,Biu,North East,Borno,Biu,10.61,12.19,2015-01-01,2023-01-01,2094
+Nigeria,1969,Damaturu,North East,Yobe,Damaturu,11.74,11.96,2015-01-01,2024-12-01,2252
+Nigeria,1970,Dandume,North West,Katsina,Dandume,11.42,7.2,2014-07-01,2023-01-01,2175
+Nigeria,1971,Giwa,North West,Kaduna,Giwa,11.28,7.42,2013-11-01,2023-01-01,2145
+Nigeria,1972,Gombe,North East,Gombe,Akko,10.28,11.17,2014-07-01,2023-01-01,2317
+Nigeria,1973,Gujungu,North West,Jigawa,Kaugama,12.36,9.58,2014-07-01,2023-01-01,2018
+Nigeria,1974,Gwandu,North West,Kebbi,Gwandu,12.49,4.64,2014-07-01,2023-01-01,2317
+Nigeria,1975,Ibadan,South West,Oyo,Ibadan North,7.4,3.92,2010-09-01,2023-01-01,2447
+Nigeria,1976,Dawanau,North West,Kano,Dawakin Tofa,12.09,8.43,2003-08-01,2023-01-01,2594
+Nigeria,1977,Kaura Namoda,North West,Zamfara,Kaura Namoda,12.6,6.59,2013-11-01,2023-01-01,2329
+Nigeria,1978,Lagos,South West,Lagos,Kosofe,6.61,3.4,2012-05-01,2023-01-01,2181
+Nigeria,1979,Maiduguri,North East,Borno,Maiduguri,11.83,13.15,2012-05-01,2024-12-01,2445
+Nigeria,1980,Mubi,North East,Adamawa,Hong,10.27,13.26,2015-01-01,2023-01-01,1960
+Nigeria,1981,Potiskum,North East,Yobe,Potiskum,11.71,11.08,2015-01-01,2026-08-01,4075
+Nigeria,1982,Saminaka,North West,Kaduna,Lere,10.42,8.68,2014-07-01,2023-01-01,2008
+Nigeria,2384,Budum,North East,Borno,Maiduguri,11.85,13.16,2016-06-01,2026-08-01,2403
+Nigeria,2385,Baga Road,North East,Borno,Konduga,11.87,13.12,2016-06-01,2026-08-01,2322
+Nigeria,2386,Bullunkutu,North East,Borno,Konduga,11.83,13.09,2016-06-01,2026-08-01,2025
+Nigeria,2387,Nguru,North East,Yobe,Nguru,12.87,10.45,2016-12-01,2026-03-01,1916
+Nigeria,2388,Bade (Gashua),North East,Yobe,Karasuwa,12.87,11.04,2016-12-01,2026-08-01,2425
+Nigeria,2389,Yusufari,North East,Yobe,Yusufari,13.06,11.17,2016-12-01,2026-03-01,2258
+Nigeria,2390,Gujba (Buni Yadi),North East,Yobe,Gujba,11.29,12.0,2016-12-01,2026-08-01,2391
+Nigeria,2391,Damaturu (Sunday Market),North East,Yobe,Damaturu,11.74,11.96,2016-12-01,2022-05-01,1510
+Nigeria,2392,Yunusari,North East,Yobe,Yunusari,13.15,11.54,2016-12-01,2026-03-01,2276
+Nigeria,2393,Geidam,North East,Yobe,Geidam,12.89,11.92,2016-12-01,2026-03-01,2337
+Nigeria,2394,Abba Gamaram,North East,Borno,Konduga,11.86,13.15,2016-01-01,2026-08-01,2457
+Nigeria,2395,Custom,North East,Borno,Maiduguri,11.85,13.17,2016-06-01,2026-08-01,2442
+Nigeria,2396,Kusawam Shanu,North East,Borno,Maiduguri,11.86,13.18,2016-06-01,2024-12-01,1372
+Nigeria,2397,Monday,North East,Borno,Maiduguri,11.83,13.15,2016-06-01,2026-08-01,2487
+Nigeria,2398,Tashan Bama,North East,Borno,Maiduguri,11.81,13.18,2016-06-01,2026-08-01,2342
+Nigeria,2399,Jakusko,North East,Yobe,Jakusko,12.2,10.88,2016-12-01,2023-06-01,1608
+Nigeria,2400,Gulani (Tettaba),North East,Yobe,Gulani,10.81,11.73,2017-09-01,2026-08-01,1837
+Nigeria,2401,Bursari,North East,Yobe,Borsari,12.5,11.5,2017-03-01,2025-06-01,1802
+Nigeria,3073,Bolori Stores,North East,Borno,Konduga,11.85,13.14,2016-11-01,2017-08-01,84
+Nigeria,3169,Ngala,North East,Borno,Ngala,12.37,14.22,2024-11-01,2026-08-01,190
+Nigeria,3171,Monguno,North East,Borno,Guzamala,12.67,13.62,2023-06-01,2026-08-01,852
+Nigeria,3173,Konduga,North East,Borno,Konduga,11.66,13.42,2023-06-01,2026-03-01,433
+Nigeria,3174,Magumeri Central,North East,Borno,Magumeri,12.11,12.83,2024-09-01,2026-03-01,407
+Nigeria,3175,Madagali,North East,Adamawa,Madagali,10.89,13.63,2023-06-01,2025-01-01,294
+Nigeria,3177,Damboa,North East,Borno,Damboa,11.16,12.76,2023-06-01,2026-06-01,731
+Nigeria,3182,Ngalang,North East,Adamawa,Numan,9.46,12.03,2025-10-01,2025-11-01,50
+Nigeria,3184,Kashuwan Shanu,North East,Borno,Maiduguri,11.86,13.18,2023-06-01,2026-08-01,630
+Nigeria,3188,Michika,North East,Adamawa,Michika,10.57,13.53,2023-06-01,2025-01-01,295
+Nigeria,3189,Gwoza Central,North East,Borno,Gwoza,11.09,13.7,2023-06-01,2026-01-01,541
+Nigeria,3192,Dikwa Central,North East,Borno,Mafa,12.04,13.91,2023-06-01,2026-09-01,711
+Nigeria,3193,Gamboru,North East,Borno,Maiduguri,11.85,13.17,2023-06-01,2026-06-01,664
+Nigeria,3198,Bayantasha,North East,Yobe,Damaturu,11.74,11.96,2023-09-01,2026-08-01,842
+Nigeria,3199,Jimeta Grain,North East,Adamawa,Demsa,9.28,12.4,2025-11-01,2025-11-01,24
+Nigeria,3202,Bama,North East,Borno,Konduga,11.52,13.69,2023-06-01,2026-01-01,591
+Nigeria,6422,Gajiram,North East,Borno,Nganzai,12.49,13.21,2025-05-01,2026-03-01,148
+Nigeria,6423,Mafa,North East,Borno,Mafa,11.92,13.6,2023-06-01,2026-09-01,816
+Nigeria,6431,Banki,North East,Borno,Konduga,11.54,13.7,2023-07-01,2026-09-01,665
+Nigeria,6432,Pulka,North East,Borno,Gwoza,11.23,13.78,2023-06-01,2026-09-01,693
+Nigeria,6438,Biriri,North East,Yobe,Tarmuwa,12.15,11.76,2025-05-01,2026-08-01,72
+Nigeria,6439,Damagum,North East,Yobe,Fune,11.68,11.34,2023-10-01,2026-08-01,765
+Nigeria,6879,Shani Main Market,North East,Borno,Shani,10.22,12.05,2023-10-01,2023-11-01,46
+Nigeria,8021,Machina Central,North East,Yobe,Machina,12.92,9.9,2023-07-01,2026-02-01,522
+Nigeria,8361,Rann,North East,Borno,Kala,12.02,14.49,2024-01-01,2026-08-01,379
+Nigeria,10668,Mubi North,North East,Adamawa,Hong,10.38,13.31,2025-10-01,2025-11-01,49
+Nigeria,10670,Gombi,North East,Adamawa,Girie,10.17,12.74,2025-09-01,2025-11-01,73
+Nigeria,10714,Nangere,North East,Yobe,Nangere,11.86,11.07,2025-09-01,2026-08-01,316
+Nigeria,10943,Ngelzarma,North East,Yobe,Fune,11.69,11.62,2025-10-01,2026-03-01,148

@@ -1,0 +1,24 @@
+relationship rel_prices_markets
+	fromColumn: prices.market_id
+	toColumn: markets.market_id
+
+relationship rel_prices_commodities
+	fromColumn: prices.commodity
+	toColumn: commodities.commodity
+
+relationship rel_prices_dates
+	fromColumn: prices.month
+	toColumn: dates.month
+
+relationship rel_prices_countries
+	fromColumn: prices.country
+	toColumn: countries.country
+
+relationship rel_fx_monthly_dates
+	fromColumn: fx_monthly.month
+	toColumn: dates.month
+
+relationship rel_fx_monthly_countries
+	fromColumn: fx_monthly.country
+	toColumn: countries.country
+
